@@ -1,0 +1,29 @@
+[
+  {
+    "name": "alpha",
+    "server":{
+      "blub":"blub"
+    },
+    "sql":{
+      "files":[
+        "test.sql",
+        "test2.sql"
+      ],
+      "rootFolder": "./sql/alpha"
+    }
+
+  },
+  {
+    "name": "beta",
+    "server":{
+      "blub":"blub"
+    },
+    "sql":{
+      "files":[
+        "test.sql",
+        "test2.sql"
+      ],
+      "rootFolder": "./sql/beta"
+    }
+  }
+]

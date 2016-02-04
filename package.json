@@ -1,0 +1,31 @@
+{
+  "name": "node-sp-publish",
+  "version": "0.0.1",
+  "description": "Publish your Stored Procedures conveniently to different Environments",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://jahelo@github.com/jahelo/node-sp-publish.git"
+  },
+  "keywords": [
+    "Stored Procedures",
+    "SQL",
+    "TSQL",
+    "Publishing"
+  ],
+  "author": "Jan-Hendrik Lorentz <jlorentz@outlook.com>",
+  "license": "MIT",
+  "preferGlobal": true,
+  "bin": {
+    "sp-publish": "app.js"
+  },
+  "bugs": {
+    "url": "https://github.com/jahelo/node-sp-publish/issues"
+  },
+  "homepage": "https://github.com/jahelo/node-sp-publish#readme",
+  "dependencies": {
+    "jsonfile": "^2.2.3"
+  }
+}
