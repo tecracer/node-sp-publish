@@ -1,7 +1,7 @@
 {
   "name": "node-sp-publish",
   "version": "0.0.1",
-  "description": "Publish your Stored Procedures conveniently to different Environments",
+  "description": "Publish your Stored Procedures conveniently to different MSSQL Servers",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -27,5 +27,8 @@
   "homepage": "https://github.com/jahelo/node-sp-publish#readme",
   "dependencies": {
     "jsonfile": "^2.2.3"
+  },
+  "devDependencies": {
+    "eslint-config-google": "^0.3.0"
   }
 }

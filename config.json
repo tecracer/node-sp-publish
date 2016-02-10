@@ -2,7 +2,10 @@
   {
     "name": "alpha",
     "server":{
-      "blub":"blub"
+      "server":"",
+      "database":"",
+      "user":"",
+      "passwort":""
     },
     "sql":{
       "files":[
@@ -16,7 +19,10 @@
   {
     "name": "beta",
     "server":{
-      "blub":"blub"
+      "server":"",
+      "database":"",
+      "user":"",
+      "passwort":""
     },
     "sql":{
       "files":[

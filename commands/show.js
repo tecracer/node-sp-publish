@@ -1,34 +1,25 @@
-var out = require('./loggingHelper.js');
-var configService = require('./config.js');
+var out = require('../services/loggingService.js');
+var configService = require('../services/configService.js');
 
 module.exports = {
   execute: function(configuration) {
-    out.explain('Here is all we can find: ')
-    var configs = configService.getConfig();
-    var foundSomething = false;
-    configs.then(function(configs){
-      for(var i = 0; i < configs.length; i++){
-        if(configs[i].name == configuration){
-          foundSomething = true;
-          out.log('Name: ' + configs[i].name);
-          out.log('Server: ' + configs[i].server);
-          out.log('Sql-Files:');
-          out.log('dir: ' + configs[i].sql.rootFolder);
-          for(var j = 0; j < configs[i].sql.files.length; j++){
-            out.log("      " + configs[i].sql.files[j]);
-          }
-          out.info("HINT: The order of the Sql-Files is the executing order.");
-        };
+    out.explain('Here is what we found: ');
+    var configs = configService.getConfig(configuration);
+    configs.then(function(config) {
+      out.log('Name: ' + config.name);
+      var server = configService.getServerFromConfig(config);
+      out.log('Server: ' + server.server);
+      out.log('Database: ' + server.database);
+      out.log('User: ' + server.user);
+      out.log('Sql-Files:');
+      var files = configService.getAllFilesFromConfig(config);
+      for (var j = 0; j < files.length; j++) {
+        out.log(files[j]);
       }
-      if(!foundSomething){
-        out.log("Too bad, we couldn't find a matching configuration.");
-        out.log("Maybe you have a spelling misstake.");
-        out.info("HINT: The configuration name is Casesensitive.");
-      }
+      out.info('HINT: The order of the Sql-Files is the executing order.');
     })
-    .catch(function(err){
+    .catch(function(err) {
       out.error(err);
-    })
-
+    });
   }
-}
+};

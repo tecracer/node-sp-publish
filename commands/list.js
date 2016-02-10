@@ -1,5 +1,5 @@
-var out = require('./loggingHelper.js');
-var configService = require('./config.js');
+var out = require('../services/loggingService.js');
+var configService = require('../services/configService.js');
 
 module.exports = {
   execute: function() {
@@ -8,7 +8,7 @@ module.exports = {
     var configs = configService.getConfig();
     configs.then(function(configs){
       for(var i = 0; i < configs.length; i++){
-        out.info(configs[i].Name);
+        out.log("" + configs[i].name);
       }
     })
     .catch(function(err){

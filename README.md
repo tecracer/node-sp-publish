@@ -1,17 +1,9 @@
 # node-sp-publish
 publish stored procedures from .sql files to sql-server
 
-#configuration
-{
-  "Name": "beta",
-  "server":{
-    "blub":"blub"
-  },
-  "sql":{
-    "files":[
-      "test.sql",
-      "test2.sql"
-    ],
-    "rootFolder": "./sql/beta"
-  }
-}
+#usage
+to use this "npm install node-sp-publish"
+
+after install is completed you can call "sp-publish -h" in your cli to see the possible commands
+
+this documentation is still very early work in progress
