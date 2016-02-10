@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://jahelo@github.com/jahelo/node-sp-publish.git"
+    "url": "git+https://team-rocket-tecracer@github.com/team-rocket-tecracer/node-sp-publish.git"
   },
   "keywords": [
     "Stored Procedures",
@@ -22,9 +22,9 @@
     "sp-publish": "app.js"
   },
   "bugs": {
-    "url": "https://github.com/jahelo/node-sp-publish/issues"
+    "url": "https://github.com/team-rocket-tecracer/node-sp-publish/issues"
   },
-  "homepage": "https://github.com/jahelo/node-sp-publish#readme",
+  "homepage": "https://github.com/team-rocket-tecracer/node-sp-publish#readme",
   "dependencies": {
     "colors": "1.1.2",
     "commander": "2.9.0",
