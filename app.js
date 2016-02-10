@@ -2,10 +2,11 @@
 var list = require('./commands/list.js');
 var show = require('./commands/show.js');
 var publish = require('./commands/publish.js');
+var pkg = require('./package.json');
 var program = require('commander');
 
 program
-  .version('0.0.1')
+  .version(pkg.version)
   .usage('[options] <file>')
   .option('-f, --filename [filename]', 'Choose the filename of ' +
   'your config if it is not following the default sp-publish.json');
