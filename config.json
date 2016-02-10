@@ -1,0 +1,35 @@
+[
+  {
+    "name": "alpha",
+    "server":{
+      "server":"",
+      "database":"",
+      "user":"",
+      "passwort":""
+    },
+    "sql":{
+      "files":[
+        "test.sql",
+        "test2.sql"
+      ],
+      "rootFolder": "./sql/alpha"
+    }
+
+  },
+  {
+    "name": "beta",
+    "server":{
+      "server":"",
+      "database":"",
+      "user":"",
+      "passwort":""
+    },
+    "sql":{
+      "files":[
+        "test.sql",
+        "test2.sql"
+      ],
+      "rootFolder": "./sql/beta"
+    }
+  }
+]

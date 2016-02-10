@@ -1,0 +1,43 @@
+{
+  "name": "node-sp-publish",
+  "version": "0.0.3",
+  "description": "Publish your Stored Procedures conveniently to different MSSQL Servers",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://team-rocket-tecracer@github.com/team-rocket-tecracer/node-sp-publish.git"
+  },
+  "contributors": [{
+    "name": "Christian Birg",
+    "email": "christian.birg@googlemail.com"
+  }],
+  "keywords": [
+    "Stored Procedures",
+    "SQL",
+    "TSQL",
+    "Publishing"
+  ],
+  "author": "Jan-Hendrik Lorentz <jlorentz@outlook.com>",
+  "license": "MIT",
+  "preferGlobal": true,
+  "bin": {
+    "sp-publish": "app.js"
+  },
+  "bugs": {
+    "url": "https://github.com/team-rocket-tecracer/node-sp-publish/issues"
+  },
+  "homepage": "https://github.com/team-rocket-tecracer/node-sp-publish#readme",
+  "dependencies": {
+    "colors": "1.1.2",
+    "commander": "2.9.0",
+    "jsonfile": "2.2.3",
+    "mssql": "3.0.1",
+    "readline-sync": "1.3.1",
+    "underscore": "1.8.3"
+  },
+  "devDependencies": {
+    "eslint-config-google": "^0.3.0"
+  }
+}
