@@ -29,8 +29,10 @@ module.exports = {
     });
   },
   getAllConfigs: function() {
+    var filename = 'sp-publish.json';
+    var pathToFile = process.cwd() + '/' + filename;
     return new Promise(function(resolve, reject) {
-      jsf.readFile('./config.json', function(err, configs) {
+      jsf.readFile(pathToFile, function(err, configs) {
         resolve(configs);
         if (err) {
           reject(err);
