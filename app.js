@@ -1,6 +1,8 @@
 #! /usr/bin/env node
-var list = require('./commands/list.js');
-var show = require('./commands/show.js');
+require('babel-core');
+require('babel-polyfill');
+require("babel-core/register");
+
 var publish = require('./commands/publish.js');
 var pkg = require('./package.json');
 var program = require('commander');
@@ -8,39 +10,33 @@ var program = require('commander');
 program
   .version(pkg.version)
   .usage('[options] <file>')
-  .option('-f, --filename [filename]', 'Choose the filename of ' +
-  'your config if it is not following the default sp-publish.json');
+  .option('-d, --dbName [dbName]', '')
+  .option('-s, --dbServer [dbServer]', '')
+  .option('-u, --dbUser [dbUser]', '')
+  .option('-p, --dbPassword [dbPassword]', '');
 
 program
-  .command('publish [configuration]')
+  .command('publish')
   .description('publishes the specified configuration')
-  .action(function(configuration) {
-    if (program.path) {
-      publish.execute(configuration, program.path);
+  .action(function(file) {
+    var filename = file || 'procedures.js';
+    var connection = {
+      name: program.dbName,
+      server: program.dbServer,
+      user: program.dbUser,
+      password: program.dbPassword
+    };
+    if (filename) {
+      publish.execute(filename, connection)
+      .then(function(arg){
+        console.log(arg);
+        process.exit(1);
+      })
+      .catch(function(error){
+        console.log(error);
+      });
     } else {
-      publish.execute(configuration);
-    }
-  });
-
-program
-  .command('show [configuration]')
-  .description('shows the specified configuration')
-  .action(function(configuration) {
-    if (program.path) {
-      show.execute(configuration, program.path);
-    } else {
-      show.execute(configuration);
-    }
-  });
-
-program
-  .command('list')
-  .description('lists all known configurations')
-  .action(function() {
-    if (program.path) {
-      list.execute(program.path);
-    } else {
-      list.execute();
+      console.log('Not all required information is available.');
     }
   });
 
