@@ -1,14 +1,10 @@
 #! /usr/bin/env node
-require('babel-core');
 require('babel-polyfill');
-require("babel-core/register");
 
 var publish = require('./commands/publish.js');
-var pkg = require('./package.json');
 var program = require('commander');
 
 program
-  .version(pkg.version)
   .usage('[options] <file>')
   .option('-d, --dbName [dbName]', '')
   .option('-s, --dbServer [dbServer]', '')

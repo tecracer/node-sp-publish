@@ -12,6 +12,7 @@ export async function execute(sqlFileList, connection) {
     config = require(process.cwd() +'/'+ sqlFileList).default;
   }
   catch(error){
+    out.error(error);
     out.error('Could not find file: ' + process.cwd() +'/'+ sqlFileList);
   }
 
