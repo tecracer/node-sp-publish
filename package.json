@@ -1,6 +1,6 @@
 {
   "name": "node-sp-publish",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "Publish your Stored Procedures conveniently to different MSSQL Servers",
   "scripts": {
     "build": "babel src -d es5",
