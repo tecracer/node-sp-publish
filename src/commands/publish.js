@@ -1,8 +1,8 @@
 var out = require('../services/loggingService.js');
 var configService = require('../services/configService.js');
 var parser = require('../services/sqlParserService.js');
-var sqlExec = require('../Services/sqlExecutingService.js');
-var utils = require('../Services/utilsService.js');
+var sqlExec = require('../services/sqlExecutingService.js');
+var utils = require('../services/utilsService.js');
 
 export async function execute(sqlFileList, connection) {
   // check if all connection params are filled and read them from console if Not

@@ -90,5 +90,5 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 var out = require('../services/loggingService.js');
 var configService = require('../services/configService.js');
 var parser = require('../services/sqlParserService.js');
-var sqlExec = require('../Services/sqlExecutingService.js');
-var utils = require('../Services/utilsService.js');
+var sqlExec = require('../services/sqlExecutingService.js');
+var utils = require('../services/utilsService.js');
