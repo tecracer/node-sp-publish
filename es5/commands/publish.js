@@ -6,6 +6,8 @@ Object.defineProperty(exports, "__esModule", {
 
 var execute = exports.execute = function () {
   var ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee2(sqlFileList, connection) {
+    var _this = this;
+
     var connectionPool, config, _config, files, rootFolder;
 
     return regeneratorRuntime.wrap(function _callee2$(_context2) {
@@ -32,9 +34,8 @@ var execute = exports.execute = function () {
             files = _config.files;
             rootFolder = _config.rootFolder;
             _context2.prev = 8;
-            _context2.t0 = Promise;
-            _context2.next = 12;
-            return files.map(function () {
+            _context2.next = 11;
+            return utils.asyncMap(function () {
               var ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee(file) {
                 var filePath, statements;
                 return regeneratorRuntime.wrap(function _callee$(_context) {
@@ -53,39 +54,30 @@ var execute = exports.execute = function () {
                         return _context.stop();
                     }
                   }
-                }, _callee, this);
+                }, _callee, _this);
               }));
 
               return function (_x3) {
                 return ref.apply(this, arguments);
               };
-            }());
+            }(), files);
 
-          case 12:
-            _context2.t1 = _context2.sent;
-            _context2.next = 15;
-            return _context2.t0.all.call(_context2.t0, _context2.t1);
-
-          case 15:
-            _context2.next = 21;
-            break;
-
-          case 17:
-            _context2.prev = 17;
-            _context2.t2 = _context2['catch'](8);
-
-            out.error(_context2.t2);
-            throw _context2.t2;
-
-          case 21:
+          case 11:
             return _context2.abrupt('return', 'done');
 
-          case 22:
+          case 14:
+            _context2.prev = 14;
+            _context2.t0 = _context2['catch'](8);
+
+            out.error(_context2.t0);
+            throw _context2.t0;
+
+          case 18:
           case 'end':
             return _context2.stop();
         }
       }
-    }, _callee2, this, [[8, 17]]);
+    }, _callee2, this, [[8, 14]]);
   }));
 
   return function execute(_x, _x2) {
@@ -99,3 +91,4 @@ var out = require('../services/loggingService.js');
 var configService = require('../services/configService.js');
 var parser = require('../services/sqlParserService.js');
 var sqlExec = require('../Services/sqlExecutingService.js');
+var utils = require('../Services/utilsService.js');

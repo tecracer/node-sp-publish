@@ -2,6 +2,7 @@ var out = require('../services/loggingService.js');
 var configService = require('../services/configService.js');
 var parser = require('../services/sqlParserService.js');
 var sqlExec = require('../Services/sqlExecutingService.js');
+var utils = require('../Services/utilsService.js');
 
 export async function execute(sqlFileList, connection) {
   // check if all connection params are filled and read them from console if Not
@@ -16,20 +17,26 @@ export async function execute(sqlFileList, connection) {
     out.error('Could not find file: ' + process.cwd() +'/'+ sqlFileList);
   }
 
-  var { files, rootFolder } = config;
+  let { files, rootFolder } = config;
   try {
-    await Promise.all(await files.map(async function(file) {
-      let filePath = rootFolder ? rootFolder + '/' + file : file;
-      let statements = parser.getStatementsFromFile(filePath);
-      out.info(file);
-      await sqlExec.executeStatements(connectionPool, statements);
-    }));
+      await utils.asyncMap(async (file) => {
+        let filePath = rootFolder ? rootFolder + '/' + file : file;
+        let statements = parser.getStatementsFromFile(filePath);
+        out.info(file);
+        await sqlExec.executeStatements(connectionPool, statements);
+      }, files)
+      /*
+      for(let i = 0; i < files.length; i++){
+        let file = files[i];
+        let filePath = rootFolder ? rootFolder + '/' + file : file;
+        let statements = parser.getStatementsFromFile(filePath);
+        out.info(file);
+        await sqlExec.executeStatements(connectionPool, statements);
+      }*/
+    return 'done';
   }
   catch(error){
     out.error(error);
     throw error;
   }
-
-  return 'done';
-
 }

@@ -21,7 +21,7 @@ var executeStatements = exports.executeStatements = function () {
 
           case 2:
             _context2.next = 4;
-            return statements.map(function () {
+            return utils.asyncMap(function () {
               var ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee(statement) {
                 return regeneratorRuntime.wrap(function _callee$(_context) {
                   while (1) {
@@ -31,9 +31,6 @@ var executeStatements = exports.executeStatements = function () {
                         return new sql.Request(connectionPool).query(statement);
 
                       case 2:
-                        return _context.abrupt('return');
-
-                      case 3:
                       case 'end':
                         return _context.stop();
                     }
@@ -44,7 +41,7 @@ var executeStatements = exports.executeStatements = function () {
               return function (_x3) {
                 return ref.apply(this, arguments);
               };
-            }());
+            }(), statements);
 
           case 4:
             return _context2.abrupt('return', 'done');
@@ -66,3 +63,4 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 
 var out = require('./loggingService');
 var sql = require('mssql');
+var utils = require('./utilsService');
