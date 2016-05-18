@@ -25,14 +25,7 @@ export async function execute(sqlFileList, connection) {
         out.info(file);
         await sqlExec.executeStatements(connectionPool, statements);
       }, files)
-      /*
-      for(let i = 0; i < files.length; i++){
-        let file = files[i];
-        let filePath = rootFolder ? rootFolder + '/' + file : file;
-        let statements = parser.getStatementsFromFile(filePath);
-        out.info(file);
-        await sqlExec.executeStatements(connectionPool, statements);
-      }*/
+
     return 'done';
   }
   catch(error){
