@@ -26,10 +26,11 @@ program
       publish.execute(filename, connection)
       .then(function(arg){
         console.log(arg);
-        process.exit(1);
+        process.exit(0);
       })
       .catch(function(error){
         console.log(error);
+        process.exit(1);
       });
     } else {
       console.log('Not all required information is available.');
