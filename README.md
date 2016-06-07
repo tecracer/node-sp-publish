@@ -2,7 +2,7 @@
 publish stored procedures from .sql files to sql-server
 
 #usage
-to use this "npm install node-sp-publish"
+to use this "npm install -g node-sp-publish"
 
 after install is completed you can call "sp-publish -h" in your cli to see the possible commands
 
