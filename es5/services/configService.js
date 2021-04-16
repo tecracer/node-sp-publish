@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 var getConnectionPool = exports.getConnectionPool = function () {
-  var ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee(connection) {
+  var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(connection) {
     var completeConnection, connectionPool;
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
@@ -33,11 +33,11 @@ var getConnectionPool = exports.getConnectionPool = function () {
   }));
 
   return function getConnectionPool(_x) {
-    return ref.apply(this, arguments);
+    return _ref.apply(this, arguments);
   };
 }();
 
-function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { return step("next", value); }, function (err) { return step("throw", err); }); } } return step("next"); }); }; }
+function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
 var out = require('./loggingService.js');
 var rl = require('readline-sync');

@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 var executeStatements = exports.executeStatements = function () {
-  var ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee2(connectionPool, statements) {
+  var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(connectionPool, statements) {
     var _this = this;
 
     return regeneratorRuntime.wrap(function _callee2$(_context2) {
@@ -22,7 +22,7 @@ var executeStatements = exports.executeStatements = function () {
           case 2:
             _context2.next = 4;
             return utils.asyncMap(function () {
-              var ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee(statement) {
+              var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(statement) {
                 return regeneratorRuntime.wrap(function _callee$(_context) {
                   while (1) {
                     switch (_context.prev = _context.next) {
@@ -39,7 +39,7 @@ var executeStatements = exports.executeStatements = function () {
               }));
 
               return function (_x3) {
-                return ref.apply(this, arguments);
+                return _ref2.apply(this, arguments);
               };
             }(), statements);
 
@@ -55,11 +55,11 @@ var executeStatements = exports.executeStatements = function () {
   }));
 
   return function executeStatements(_x, _x2) {
-    return ref.apply(this, arguments);
+    return _ref.apply(this, arguments);
   };
 }();
 
-function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { return step("next", value); }, function (err) { return step("throw", err); }); } } return step("next"); }); }; }
+function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
 var out = require('./loggingService');
 var sql = require('mssql');

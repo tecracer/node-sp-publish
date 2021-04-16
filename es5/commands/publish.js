@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 var execute = exports.execute = function () {
-  var ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee2(sqlFileList, connection) {
+  var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(sqlFileList, connection) {
     var _this = this;
 
     var connectionPool, config, _config, files, rootFolder;
@@ -30,13 +30,11 @@ var execute = exports.execute = function () {
               out.error('Could not find file: ' + process.cwd() + '/' + sqlFileList);
             }
 
-            _config = config;
-            files = _config.files;
-            rootFolder = _config.rootFolder;
-            _context2.prev = 8;
-            _context2.next = 11;
+            _config = config, files = _config.files, rootFolder = _config.rootFolder;
+            _context2.prev = 6;
+            _context2.next = 9;
             return utils.asyncMap(function () {
-              var ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee(file) {
+              var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(file) {
                 var filePath, statements;
                 return regeneratorRuntime.wrap(function _callee$(_context) {
                   while (1) {
@@ -58,34 +56,34 @@ var execute = exports.execute = function () {
               }));
 
               return function (_x3) {
-                return ref.apply(this, arguments);
+                return _ref2.apply(this, arguments);
               };
             }(), files);
 
-          case 11:
+          case 9:
             return _context2.abrupt('return', 'done');
 
-          case 14:
-            _context2.prev = 14;
-            _context2.t0 = _context2['catch'](8);
+          case 12:
+            _context2.prev = 12;
+            _context2.t0 = _context2['catch'](6);
 
             out.error(_context2.t0);
             throw _context2.t0;
 
-          case 18:
+          case 16:
           case 'end':
             return _context2.stop();
         }
       }
-    }, _callee2, this, [[8, 14]]);
+    }, _callee2, this, [[6, 12]]);
   }));
 
   return function execute(_x, _x2) {
-    return ref.apply(this, arguments);
+    return _ref.apply(this, arguments);
   };
 }();
 
-function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { return step("next", value); }, function (err) { return step("throw", err); }); } } return step("next"); }); }; }
+function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
 var out = require('../services/loggingService.js');
 var configService = require('../services/configService.js');
